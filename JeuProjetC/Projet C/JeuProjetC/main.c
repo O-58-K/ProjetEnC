@@ -255,7 +255,7 @@ int InventairE()
 int ModeCombat()
 {
     int Exp = 480; //le niveau du joueur
-    int XPS = 0;   //les point d'esperience du joueur
+    int XPS = 0;   //les points d'experience du joueur
     int FinJeu = 0;
     int ViePotion = 200;
 
