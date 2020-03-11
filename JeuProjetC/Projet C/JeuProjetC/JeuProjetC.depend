@@ -1,0 +1,78 @@
+# depslib dependency file v1.0
+1583608242 source:c:\users\migue\desktop\projet c\jeurpg\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<windows.h>
+	"structure.h"
+	"fonction.h"
+
+1583607928 c:\users\migue\desktop\projet c\jeurpg\structure.h
+
+1583607985 c:\users\migue\desktop\projet c\jeurpg\fonction.h
+
+1583740660 source:c:\users\ok an\desktop\ccc\projet c\jeurpg\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<windows.h>
+	"structure.h"
+	"fonction.h"
+
+1583740660 c:\users\ok an\desktop\ccc\projet c\jeurpg\structure.h
+
+1583759663 c:\users\ok an\desktop\ccc\projet c\jeurpg\fonction.h
+
+1583893868 source:c:\users\ok an\desktop\autres\ccc\projet c\jeurpg\main.c
+	<stdio.h>
+	<stdlib.h>
+	"structure.h"
+	<windows.h>
+	<string.h>
+	<time.h>
+	"Couleurs.h"
+
+1583890383 c:\users\ok an\desktop\autres\ccc\projet c\jeurpg\structure.h
+
+1583878665 c:\users\ok an\desktop\autres\ccc\projet c\jeurpg\fonction.h
+
+1583882379 c:\users\ok an\desktop\autres\ccc\projet c\jeurpg\couleurs.h
+	<stdio.h>
+	<stdlib.h>
+
+1583877873 c:\users\ok an\desktop\autres\ccc\projet c\jeurpg\code.h
+	<stdio.h>
+	<stdlib.h>
+
+1583913292 source:c:\users\ok an\desktop\jeuprojetc\projet c\jeurpg\main.c
+	<stdio.h>
+	<stdlib.h>
+	"structure.h"
+	<windows.h>
+	<string.h>
+	<time.h>
+	"Couleurs.h"
+
+1583890383 c:\users\ok an\desktop\jeuprojetc\projet c\jeurpg\structure.h
+
+1583882379 c:\users\ok an\desktop\jeuprojetc\projet c\jeurpg\couleurs.h
+	<stdio.h>
+	<stdlib.h>
+
+1583926136 source:c:\users\ok an\desktop\jeuprojetc\projet c\jeuprojetc\main.c
+	<stdio.h>
+	<stdlib.h>
+	"structure.h"
+	<windows.h>
+	<string.h>
+	<time.h>
+	"Couleurs.h"
+
+1583919208 c:\users\ok an\desktop\jeuprojetc\projet c\jeuprojetc\structure.h
+
+1583882379 c:\users\ok an\desktop\jeuprojetc\projet c\jeuprojetc\couleurs.h
+	<stdio.h>
+	<stdlib.h>
+
