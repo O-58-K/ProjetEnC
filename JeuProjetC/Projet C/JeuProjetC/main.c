@@ -6,41 +6,28 @@
 #include <time.h>
 #include "Couleurs.h"
 
-Bobs JoueurBob;
-Kellogg BossKellogg;
+//Cela peut arriver de s'y prendre à deux fois pour valider un choix d'attaque
+
+    Bobs JoueurBob;
+    Kellogg BossKellogg;
 
     void Color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
         {
         HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
         }
-Local PipBoy;
-Pillards Pillard;
+
+    Local PipBoy;
+    Pillards Pillard;
 
 void main(void)
 {
 
-    JoueurBob.PointDeEXP = 1;
+    JoueurBob.PointDeEXP = 1;JoueurBob.PointDeVie = 430;JoueurBob.DamageVIE = 35;JoueurBob.Exp = 385;JoueurBob.DEPLAC = 0;
 
-    JoueurBob.PointDeVie = 430;
+    Pillard.PointDeVie = 230;Pillard.DamageVIE = 18;Pillard.PointDeEXP = 10;
 
-    JoueurBob.DamageVIE = 35;
-
-    JoueurBob.Exp = 385;
-
-    JoueurBob.DEPLAC = 0;
-
-    Pillard.PointDeVie = 230;
-
-    Pillard.DamageVIE = 18;
-
-    Pillard.PointDeEXP = 10;
-
-    BossKellogg.PointDeVie = 1500;
-
-    BossKellogg.DamageVIE = 150;
-
-    BossKellogg.PointDeEXP = 40;
+    BossKellogg.PointDeVie = 1500;BossKellogg.DamageVIE = 150;BossKellogg.PointDeEXP = 40;
 
     PipBoy.potion = 4;
 
@@ -49,26 +36,35 @@ void main(void)
 
         case 1:
             printf("\nSurvivant-e, etes vous sur la liste ?  \n\n");
-            scanf("%s", JoueurBob.NOM);
-            printf("Effectivement...\n");
-            Sleep(1500);
-            printf("La guerre, la guerre ne meurt jamais, vous apparassez dans une charmante ville sous le nom de Concord completement rasee par la guerre.\n\n");
-            Sleep(1500);
-            printf("Un Pillard a vos alentours ! \n");
-            Sleep(1500);
-            printf("Faites gaffe ! \n\n");
             Sleep(1000);
 
+            printf("\n Je vous prie, donnez-nous votre nom :  \n\n");
+            scanf("%s", JoueurBob.NOM);
+            printf("\nEffectivement...\n\n");
+            Sleep(1500);
+
+            printf(" La guerre, la guerre ne meurt jamais, \n Vous apparaissez dans une charmante ville sous le nom de Concord completement rasee par la guerre.\n\n");
+            Sleep(1500);
+
+            printf("\n Un Pillard aux alentours ! \n");
+            Sleep(1500);
+
+            printf(" Faites gaffe ! \n\n");
+            Sleep(1000);
 
             ModeCombat();
             LocalisatioN();
 
             case 2:
-                printf("Chargement...");
+                printf("Chargement...\n\n");
+                Sleep(2000);
+                MenuFall();
                 break;
 
             case 3:
-                printf("Jeux RPG se passant dans un monde tel que vous ne l'imaginez..., par Okan et Baptiste.");
+                printf("Jeux RPG se passant dans un monde tel que vous ne l'imaginez..., par Okan et Baptiste.\n\n");
+                Sleep(2000);
+                MenuFall();
                 break;
 
             case 4:
@@ -83,7 +79,7 @@ void main(void)
 
     int Select3;
     Sleep(1500);
-    printf("\Deplacez-vous: \n\n");
+    printf("\nDeplacez-vous: \n\n");
 
     printf("-1 Abri 101-N \n");
 
@@ -105,7 +101,7 @@ int LocalisatioN(){
     int pos2;
 
 
-    switch(DeplCH()){
+    switch(DeplCH()){ //Deplace le joueur
 
         int Select1;
 
@@ -129,7 +125,7 @@ int LocalisatioN(){
                     pos1++;
                     JoueurBob.DEPLAC = 0;
                         pos1--;
-                        printf("Vous allez vers Abri 87...");
+                        printf("Vous allez vers Abri 87...\n");
                         pos1 = pos1 - 1;
                         Sleep(1700);
                         printf("Vous etes a %d,%d\n\n", pos2,pos1);
@@ -141,7 +137,7 @@ int LocalisatioN(){
                 case 3:
                     pos2++;
                     JoueurBob.DEPLAC = 0;
-                        printf("Vous allez vers Abri 34...");
+                        printf("Vous allez vers Abri 34...\n");
                         pos2 = pos2 + 1;
                         Sleep(1700);
                         printf("Vous etes a %d,%d\n\n", pos2,pos1);
@@ -153,7 +149,7 @@ int LocalisatioN(){
                 case 4:
                     pos2--;
                     JoueurBob.DEPLAC = 0;
-                        printf("Vous allez vers Abri 111...");
+                        printf("Vous allez vers Abri 111...\n");
                         pos2 = pos2 - 1;
                         Sleep(1700);
                         printf("Vous etes a %d,%d\n\n", pos2,pos1);
@@ -163,8 +159,6 @@ int LocalisatioN(){
 
                     break;
 
-
-
                     return 0;
 
         }while(JoueurBob.PointDeVie < 220);
@@ -173,20 +167,20 @@ int LocalisatioN(){
 
 }
 
-    int MenuFall()
+    int MenuFall() //Afiche le menu du jeu
         {
 
         int LesChoix;
         Color(2,0); //Permet de changer la couleur du texte et du fond de texte
         printf("\n "" ""  ******Fallout Menu******: \n\n");
 
-        printf("1 - Nouvelle partie.\n\n");
+        printf(" """"1 - Nouvelle partie.\n\n");
 
-        printf("2 - Charger une partie.\n\n");
+        printf(" """"2 - Charger une partie.\n\n");
 
-        printf("3 - A propos du jeu.\n\n");
+        printf(" """"3 - A propos du jeu.\n\n");
 
-        printf("4 - Quitter\n\n");
+        printf(" """"4 - Quitter\n\n");
         scanf("%d", &LesChoix);
 
         return LesChoix;
@@ -197,31 +191,13 @@ int DamageVIEBob()
     int healthP;
     {
 
-    srand(time(NULL));
+    srand(time(NULL)); int healthP = rand() % 11;
 
-    int healthP = rand() % 11;
+    if(healthP == 10){Pillard.PointDeVie -= JoueurBob.DamageVIE;}
 
-    if(healthP == 10)
-        {
+    if(healthP > 1 && healthP < 10){Pillard.PointDeVie -= JoueurBob.DamageVIE;}
 
-        Pillard.PointDeVie -= JoueurBob.DamageVIE;
-
-        }
-
-    if(healthP > 1 && healthP < 10)
-        {
-
-        Pillard.PointDeVie -= JoueurBob.DamageVIE;
-
-        }
-
-    if(healthP < 2)
-        {
-
-        JoueurBob.DamageVIE += JoueurBob.DamageVIE;
-        Pillard.PointDeVie -= JoueurBob.DamageVIE;
-
-        }
+    if(healthP < 2){JoueurBob.DamageVIE += JoueurBob.DamageVIE; Pillard.PointDeVie -= JoueurBob.DamageVIE;}
 
     return healthP;
 
@@ -229,7 +205,7 @@ int DamageVIEBob()
 
 }
 
-int Select()
+int Select() //Le joueur peut choisir entre les differentes solutions proposees
     {
 
     Color(2,0);
@@ -250,32 +226,13 @@ int Select()
 
 int DamageVIEPillard()
 {
-    srand(time(NULL));
+    srand(time(NULL)); int healthP = rand()% 11;
 
-    int healthP = rand()% 11;
+    if(healthP == 10)  {Pillard.DamageVIE = 0;  JoueurBob.PointDeVie-=Pillard.DamageVIE;}
 
-    if(healthP == 10)
-        {
+    if(healthP < 2)  {JoueurBob.PointDeVie-=Pillard.DamageVIE;  Pillard.DamageVIE+=Pillard.DamageVIE;}
 
-        Pillard.DamageVIE = 0;
-
-        JoueurBob.PointDeVie-=Pillard.DamageVIE;
-
-        }
-    if(healthP < 2)
-        {
-
-        JoueurBob.PointDeVie-=Pillard.DamageVIE;
-
-        Pillard.DamageVIE+=Pillard.DamageVIE;
-
-        }
-    if(healthP>2 && healthP<10)
-        {
-
-        JoueurBob.PointDeVie-=Pillard.DamageVIE;
-
-        }
+    if(healthP>2 && healthP<10)  {JoueurBob.PointDeVie-=Pillard.DamageVIE;}
 
     return healthP;
 
@@ -295,41 +252,10 @@ int InventairE()
     return Select4;
     }
 
-int DamageVIEBossKellogg()
-{
-
-    srand(time(NULL));
-
-    int healthP = rand()% 10;
-
-    if(healthP == 9)
-        {
-
-        BossKellogg.DamageVIE = 0;
-        JoueurBob.PointDeVie -= BossKellogg.DamageVIE;
-
-        }
-    if(healthP < 2)
-        {
-
-        BossKellogg.DamageVIE += BossKellogg.DamageVIE;
-        JoueurBob.PointDeVie -=Pillard.DamageVIE;
-
-        }
-    if(healthP > 1 && healthP < 9)
-        {
-
-        JoueurBob.PointDeVie -=BossKellogg.DamageVIE;
-
-        }
-
-    return healthP;
-}
-
 int ModeCombat()
 {
-    int Exp = 480;
-    int XPS = 0;
+    int Exp = 480; //le niveau du joueur
+    int XPS = 0;   //les point d'esperience du joueur
     int FinJeu = 0;
     int ViePotion = 200;
 
@@ -342,11 +268,14 @@ int ModeCombat()
                 printf("Oula! Vous claquez les Pillards maintenant ? \n");
                 DamageVIEBob();
                 Sleep(1000);
-                printf("Il s'est prit une sale claque !\n");
+
+                printf("Il s'est prit une sale claque !\n\n");
                 Sleep(1000);
+
                 printf("Pas de bol d'etre tomber sur vous\n");
                 Sleep(1500);
-                printf("Il ne lui reste plus qu'il fasse ses prieres! il lui reste %d de vie \n" , Pillard.PointDeVie );
+
+                printf("Il ne lui reste plus qu'il fasse ses prieres! il lui reste %d de vie \n\n" , Pillard.PointDeVie );
                 Sleep(1500);
 
 
@@ -356,6 +285,7 @@ int ModeCombat()
                     printf("Mr.Pillard n est pas tres content! \n");
                     DamageVIEPillard();
                     Sleep(1500);
+
                     printf("Vous vous etes pris %d de Degats!\n", Pillard.DamageVIE);
                     printf("Il vous reste %d de vie! \n", JoueurBob.PointDeVie);
 
@@ -392,7 +322,6 @@ int ModeCombat()
                                 {
                                 printf("Votre pouvoir S.P.E.C.I.A.L est epuise.");
                                 }
-
 
                             if(PipBoy.potion > 0)
                                 {
@@ -455,6 +384,7 @@ int ModeCombat()
 
                 case 3:
                     printf("Vous avez reussi a vous echapper ! ");
+                    Select();
                     break;
 
                 case 4:

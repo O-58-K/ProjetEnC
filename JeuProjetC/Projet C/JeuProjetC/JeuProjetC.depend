@@ -76,3 +76,18 @@
 	<stdio.h>
 	<stdlib.h>
 
+1583941545 source:c:\users\ok an\desktop\projetenc\jeuprojetc\projet c\jeuprojetc\main.c
+	<stdio.h>
+	<stdlib.h>
+	"structure.h"
+	<windows.h>
+	<string.h>
+	<time.h>
+	"Couleurs.h"
+
+1583919208 c:\users\ok an\desktop\projetenc\jeuprojetc\projet c\jeuprojetc\structure.h
+
+1583882379 c:\users\ok an\desktop\projetenc\jeuprojetc\projet c\jeuprojetc\couleurs.h
+	<stdio.h>
+	<stdlib.h>
+
